@@ -1,0 +1,1678 @@
+/* =========================================================
+   JUAN FERNANDO ROJAS
+   HOJA DE ESTILOS PRINCIPAL
+========================================================= */
+
+
+/* =========================================================
+   1. CONFIGURACIÓN GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0B1F3A;
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   2. NAVEGACIÓN
+========================================================= */
+
+.navbar {
+    width: 100%;
+    padding: 22px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background-color: #0B1F3A;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #D9A441;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #D9A441;
+}
+
+.boton-nav {
+    background-color: #1769FF;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.boton-nav:hover {
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+
+    background: transparent;
+
+    border: 1px solid rgba(255,255,255,0.30);
+
+    color: #FFFFFF;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-agenda {
+    display: none;
+
+    margin-top: 10px;
+
+    padding: 14px 16px !important;
+
+    text-align: center;
+
+    background: #1769FF;
+
+    color: #FFFFFF !important;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    border: none !important;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.menu-agenda:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   3. PORTADA
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 125px 7% 60px;
+
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+.hero-subtitulo {
+    color: #D9A441;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 5.5vw, 72px);
+
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #1769FF;
+}
+
+.hero-descripcion {
+    max-width: 600px;
+
+    color: #C9D1DC;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+.hero-destacado {
+    color: #D9A441;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+
+    letter-spacing: 0.5px;
+}
+
+.hero-botones {
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.boton-principal {
+    display: inline-block;
+
+    background-color: #1769FF;
+
+    padding: 15px 25px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: transform 0.3s ease;
+}
+
+.boton-principal:hover {
+    transform: translateY(-3px);
+}
+
+.boton-secundario {
+    display: inline-block;
+
+    border: 1px solid #D9A441;
+
+    padding: 15px 25px;
+
+    border-radius: 6px;
+
+    color: #FFFFFF;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background-color: rgba(217,164,65,0.08);
+}
+
+.instrumentos {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.instrumentos span {
+    padding: 7px 13px;
+
+    border: 1px solid rgba(255,255,255,0.20);
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    color: #C9D1DC;
+}
+
+
+/* =========================================================
+   4. FOTOGRAFÍA PRINCIPAL
+========================================================= */
+
+.hero-imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.marco-foto {
+    width: 430px;
+    height: 540px;
+
+    border-radius: 20px;
+
+    padding: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #1769FF,
+        #D9A441
+    );
+}
+
+.foto-placeholder {
+    width: 100%;
+    height: 100%;
+
+    background-color: #101C2E;
+
+    border-radius: 14px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #7F8B9A;
+
+    font-size: 18px;
+}
+
+.marco-foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    display: block;
+}
+
+
+/* =========================================================
+   5. SECCIONES GENERALES
+========================================================= */
+
+.seccion {
+    padding: 110px 7%;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.titulo-seccion p,
+.etiqueta {
+    color: #D9A441;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.titulo-seccion h2 {
+    font-size: 45px;
+    line-height: 1.15;
+}
+
+
+/* =========================================================
+   6. CLASES
+========================================================= */
+
+.clases-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.clase-card {
+    background: #101C2E;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.clase-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #1769FF;
+
+    box-shadow: 0 20px 45px rgba(0,0,0,0.30);
+}
+
+.clase-imagen {
+    position: relative;
+
+    width: 100%;
+
+    height: 210px;
+
+    overflow: hidden;
+
+    background: #0D1828;
+}
+
+.clase-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.clase-card:hover .clase-imagen img {
+    transform: scale(1.06);
+}
+
+.clase-imagen::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(5,18,32,0.75),
+        transparent 60%
+    );
+}
+
+.clase-numero {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    z-index: 2;
+
+    background: #D9A441;
+
+    color: #071B2D;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.clase-contenido {
+    padding: 25px;
+}
+
+.clase-contenido h3 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.clase-contenido .nivel {
+    color: #1769FF;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 14px;
+}
+
+.clase-contenido > p:not(.nivel) {
+    color: #AEB8C5;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.clase-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    color: #FFFFFF;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+.clase-link span {
+    color: #D9A441;
+
+    font-size: 19px;
+
+    margin-left: 7px;
+
+    transition: transform 0.3s ease;
+}
+
+.clase-link:hover {
+    color: #1769FF;
+}
+
+.clase-link:hover span {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   7. SOBRE MÍ
+========================================================= */
+
+.sobre-mi {
+    display: block;
+
+    background-color: #101C2E;
+
+    padding: 110px 7%;
+}
+
+.sobre-mi .titulo-seccion {
+    margin-bottom: 60px;
+}
+
+.sobre-mi-grid {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.sobre-mi-foto {
+    position: relative;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: #101C2E;
+}
+
+.sobre-mi-foto img {
+    width: 100%;
+
+    height: 560px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.sobre-mi-foto::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(5,18,32,0.75),
+        transparent 55%
+    );
+
+    pointer-events: none;
+}
+
+.sobre-mi-etiqueta {
+    position: absolute;
+
+    bottom: 25px;
+    left: 25px;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.sobre-mi-etiqueta strong {
+    color: #FFFFFF;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+.sobre-mi-etiqueta span {
+    color: #D9A441;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-top: 5px;
+}
+
+.sobre-mi-contenido {
+    max-width: 650px;
+}
+
+.sobre-mi-subtitulo {
+    color: #D9A441 !important;
+
+    font-size: 12px !important;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.sobre-mi-contenido h3 {
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+}
+
+.sobre-mi-contenido > p:not(.sobre-mi-subtitulo) {
+    color: #AEB8C5;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.sobre-mi-contenido .btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   8. TRAYECTORIA
+========================================================= */
+
+.trayectoria {
+    padding: 110px 7%;
+}
+
+.trayectoria-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+    margin-top: 55px;
+}
+
+.trayectoria-card {
+    position: relative;
+
+    padding: 38px;
+
+    min-height: 300px;
+
+    background: #0B1D2E;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.trayectoria-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(217,164,65,0.45);
+}
+
+.trayectoria-numero {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #D9A441;
+
+    color: #071C2D;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+.trayectoria-icono {
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+.trayectoria-card h3 {
+    color: #FFFFFF;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.trayectoria-card h4 {
+    color: #D9A441;
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+.trayectoria-card p {
+    color: #AEB8C5;
+
+    line-height: 1.7;
+
+    font-size: 15px;
+
+    max-width: 500px;
+}
+
+.trayectoria-card > span {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    color: #D9A441;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+.trayectoria-card-grande {
+    grid-column: 1 / -1;
+
+    min-height: 240px;
+}
+
+.trayectoria-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.trayectoria-tags span {
+    padding: 9px 15px;
+
+    border: 1px solid rgba(217,164,65,0.35);
+
+    border-radius: 30px;
+
+    color: #D9A441;
+
+    font-size: 12px;
+}
+
+.trayectoria-mini {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin: 20px 0;
+}
+
+.trayectoria-mini span {
+    padding: 7px 12px;
+
+    background: rgba(217,164,65,0.08);
+
+    border: 1px solid rgba(217,164,65,0.25);
+
+    border-radius: 20px;
+
+    color: #D9A441;
+
+    font-size: 11px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   9. EXPERIENCIA ARTÍSTICA
+========================================================= */
+
+.experiencia-resumen {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.experiencia-bloque {
+    padding: 18px;
+
+    background: rgba(255,255,255,0.025);
+
+    border: 1px solid rgba(255,255,255,0.06);
+
+    border-radius: 10px;
+}
+
+.experiencia-bloque strong {
+    display: block;
+
+    color: #D9A441;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.experiencia-bloque p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    color: #AEB8C5;
+}
+
+
+/* =========================================================
+   10. LO QUE APRENDERÁS
+========================================================= */
+
+.aprendizaje {
+    padding: 110px 7%;
+
+    background: #071A2B;
+}
+
+.aprendizaje-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+.aprendizaje-card {
+    position: relative;
+
+    padding: 34px 30px;
+
+    min-height: 260px;
+
+    background: #0B1F32;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.aprendizaje-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(217,164,65,0.45);
+
+    background: #0D2439;
+}
+
+.aprendizaje-icono {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    background: rgba(217,164,65,0.10);
+
+    font-size: 25px;
+}
+
+.aprendizaje-card h3 {
+    color: #FFFFFF;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+.aprendizaje-card p {
+    color: #AEB8C5;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+.aprendizaje-cta {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 30px;
+
+    margin-top: 55px;
+
+    padding: 35px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.aprendizaje-cta p {
+    margin: 0;
+
+    color: #FFFFFF;
+
+    font-size: 18px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   11. CONTACTO
+========================================================= */
+
+.contacto {
+    padding: 120px 7%;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #1769FF,
+        #0B1F3A
+    );
+}
+
+.contacto-contenido {
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.contacto h2 {
+    font-size: clamp(40px, 6vw, 65px);
+
+    line-height: 1.1;
+
+    margin: 20px 0;
+}
+
+.contacto p {
+    color: #D8E0EA;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   12. BOTÓN WHATSAPP
+========================================================= */
+
+.boton-whatsapp {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    background-color: #FFFFFF;
+
+    color: #0B1F3A;
+
+    padding: 17px 30px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.boton-whatsapp i {
+    color: #25D366;
+
+    font-size: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.boton-whatsapp:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+}
+
+.boton-whatsapp:hover i {
+    transform: scale(1.15);
+}
+
+
+/* =========================================================
+   13. FOOTER
+========================================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #070F1D;
+
+    color: #7F8B9A;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   14. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-descripcion {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-botones {
+        justify-content: center;
+    }
+
+    .instrumentos {
+        justify-content: center;
+    }
+
+    .clases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-mi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trayectoria-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .aprendizaje-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   15. RESPONSIVE — MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 15px;
+
+        padding: 15px 5%;
+    }
+
+    .navbar .logo {
+        flex: 1;
+
+        font-size: 15px;
+
+        letter-spacing: 0.8px;
+
+        white-space: nowrap;
+    }
+
+    .navbar .menu {
+        display: none !important;
+    }
+
+    .navbar .boton-nav {
+        display: none !important;
+
+        visibility: hidden !important;
+
+        width: 0 !important;
+
+        padding: 0 !important;
+
+        margin: 0 !important;
+    }
+
+    .navbar > .btn-primary {
+    display: none !important;
+}
+
+    .navbar .menu-toggle {
+        display: flex !important;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+    }
+
+
+    /* ---------- PORTADA ---------- */
+
+    .hero {
+        padding: 125px 5% 60px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+
+        line-height: 1.08;
+    }
+
+    .hero-descripcion {
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+    .hero-botones {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .hero-botones a {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .marco-foto {
+        width: 100%;
+
+        max-width: 330px;
+
+        height: 420px;
+    }
+
+    .instrumentos {
+        gap: 7px;
+
+        justify-content: center;
+    }
+
+    .instrumentos span {
+        font-size: 11px;
+
+        padding: 7px 10px;
+    }
+
+
+    /* ---------- SECCIONES ---------- */
+
+    .seccion {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 38px;
+    }
+
+
+    /* ---------- CLASES ---------- */
+
+    .clases-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .clase-card {
+        width: 100%;
+
+        border-radius: 16px;
+    }
+
+    .clase-imagen {
+        height: 195px;
+    }
+
+    .clase-contenido {
+        padding: 25px 22px 28px;
+    }
+
+    .clase-contenido h3 {
+        font-size: 24px;
+
+        margin-bottom: 8px;
+    }
+
+    .clase-contenido .nivel {
+        font-size: 13px;
+
+        margin-bottom: 14px;
+    }
+
+    .clase-contenido > p:not(.nivel) {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .clase-link {
+        min-height: 42px;
+
+        margin-top: 18px;
+
+        padding: 10px 0;
+
+        font-size: 12px;
+    }
+
+    .clase-link span {
+        font-size: 20px;
+    }
+
+
+    /* ---------- SOBRE MÍ ---------- */
+
+    .sobre-mi {
+        padding: 70px 5%;
+    }
+
+    .sobre-mi .titulo-seccion {
+        margin-bottom: 35px;
+
+        text-align: center;
+    }
+
+    .sobre-mi .titulo-seccion h2 {
+        font-size: 32px;
+
+        line-height: 1.18;
+    }
+
+    .sobre-mi-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .sobre-mi-foto {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .sobre-mi-foto img {
+        width: 100%;
+
+        height: 360px;
+
+        object-fit: cover;
+    }
+
+    .sobre-mi-etiqueta {
+        bottom: 18px;
+
+        left: 18px;
+    }
+
+    .sobre-mi-etiqueta strong {
+        font-size: 16px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .sobre-mi-etiqueta span {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .sobre-mi-contenido {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding: 0;
+    }
+
+    .sobre-mi-subtitulo {
+        font-size: 11px !important;
+
+        letter-spacing: 2px;
+    }
+
+    .sobre-mi-contenido h3 {
+        font-size: 28px;
+
+        line-height: 1.2;
+
+        margin-bottom: 20px;
+    }
+
+    .sobre-mi-contenido > p:not(.sobre-mi-subtitulo) {
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 16px;
+    }
+
+    .sobre-mi-contenido .btn-primary {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 14px 20px;
+    }
+
+
+    /* ---------- TRAYECTORIA ---------- */
+
+    .trayectoria {
+        padding: 80px 5%;
+    }
+
+    .trayectoria .titulo-seccion {
+        margin-bottom: 40px;
+    }
+
+    .trayectoria .titulo-seccion h2 {
+        font-size: 32px;
+
+        line-height: 1.2;
+    }
+
+    .trayectoria-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 35px;
+    }
+
+    .trayectoria-card,
+    .trayectoria-card-grande {
+        grid-column: auto;
+
+        min-height: auto;
+
+        padding: 30px 24px;
+    }
+
+    .trayectoria-card h3 {
+        font-size: 24px;
+
+        line-height: 1.2;
+    }
+
+    .trayectoria-card h4 {
+        font-size: 16px;
+    }
+
+    .trayectoria-card p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .trayectoria-card > span {
+        font-size: 12px;
+    }
+
+    .trayectoria-tags,
+    .trayectoria-mini {
+        gap: 7px;
+    }
+
+    .trayectoria-tags span,
+    .trayectoria-mini span {
+        font-size: 11px;
+
+        padding: 7px 10px;
+    }
+
+
+    /* ---------- EXPERIENCIA ARTÍSTICA ---------- */
+
+    .experiencia-resumen {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+
+        margin-top: 22px;
+    }
+
+    .experiencia-bloque {
+        padding: 16px;
+    }
+
+    .experiencia-bloque strong {
+        font-size: 12px;
+    }
+
+    .experiencia-bloque p {
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+
+    /* ---------- APRENDIZAJE ---------- */
+
+    .aprendizaje {
+        padding: 75px 5%;
+    }
+
+    .aprendizaje .titulo-seccion {
+        margin-bottom: 40px;
+    }
+
+    .aprendizaje .titulo-seccion h2 {
+        font-size: 32px;
+
+        line-height: 1.2;
+    }
+
+    .aprendizaje-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 35px;
+    }
+
+    .aprendizaje-card {
+        min-height: auto;
+
+        padding: 28px 24px;
+
+        border-radius: 16px;
+    }
+
+    .aprendizaje-icono {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 20px;
+
+        font-size: 23px;
+    }
+
+    .aprendizaje-card h3 {
+        font-size: 22px;
+
+        margin-bottom: 12px;
+    }
+
+    .aprendizaje-card p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .aprendizaje-cta {
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 20px;
+
+        margin-top: 40px;
+
+        padding: 30px 10px;
+    }
+
+    .aprendizaje-cta p {
+        font-size: 16px;
+    }
+
+
+    /* ---------- CONTACTO ---------- */
+
+    .contacto {
+        padding: 90px 5%;
+    }
+
+    .contacto-contenido {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+    .contacto-contenido > p:first-child {
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .contacto h2 {
+        font-size: 38px;
+
+        line-height: 1.12;
+
+        margin: 20px 0;
+    }
+
+    .contacto-contenido > p:not(:first-child) {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .boton-whatsapp {
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 15px 20px;
+
+        font-size: 13px;
+
+        justify-content: center;
+    }
+
+    .boton-whatsapp i {
+        font-size: 20px;
+    }
+
+
+    /* ---------- MENÚ ABIERTO ---------- */
+
+    .navbar .menu.menu-abierto {
+        display: flex !important;
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 5%;
+        right: 5%;
+
+        z-index: 2000;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 15px;
+
+        background: #0B1F3A;
+
+        border: 1px solid rgba(255,255,255,0.10);
+
+        border-radius: 12px;
+
+        box-shadow: 0 15px 35px rgba(0,0,0,0.30);
+
+        max-height: calc(100vh - 85px);
+
+        overflow-y: auto;
+    }
+
+    .navbar .menu.menu-abierto a {
+        display: block;
+
+        padding: 15px;
+
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+
+        font-size: 14px;
+    }
+
+    .navbar .menu.menu-abierto a:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .menu.menu-abierto .menu-agenda {
+        display: block !important;
+    }
+}
+
+
+/* =========================================================
+   16. MENÚ MÓVIL — TABLET / DISPOSITIVOS MEDIANOS
+========================================================= */
+
+@media (min-width: 601px) {
+
+    .menu-agenda {
+        display: none !important;
+    }
+}
