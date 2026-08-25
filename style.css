@@ -408,6 +408,27 @@ button {
     gap: 24px;
 }
 
+.clases-intro {
+    max-width: 700px;
+    margin: -25px auto 45px;
+    text-align: center;
+}
+
+.clases-intro strong {
+    display: block;
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.clases-intro p {
+    color: #AEB8C5;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
 .clase-card {
     background: #101C2E;
 
@@ -1313,6 +1334,18 @@ footer {
 
 
     /* ---------- CLASES ---------- */
+
+    .clases-intro {
+    margin: -15px auto 30px;
+}
+
+.clases-intro strong {
+    font-size: 16px;
+}
+
+.clases-intro p {
+    font-size: 13px;
+}
 
     .clases-grid {
         grid-template-columns: 1fr;
