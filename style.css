@@ -19,10 +19,23 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     background-color: #0B1F3A;
     color: #FFFFFF;
     line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+.logo,
+button,
+.boton-principal,
+.boton-secundario,
+.boton-nav,
+.clase-link,
+.menu a {
+    font-family: "Montserrat", sans-serif;
 }
 
 a {
@@ -58,9 +71,14 @@ button {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
     white-space: nowrap;
 }
 
@@ -668,6 +686,7 @@ button {
     margin-top: 15px;
 }
 
+
 /* =========================================================
    8. TRAYECTORIA
 ========================================================= */
@@ -1153,14 +1172,14 @@ footer {
     }
 
     .navbar .logo {
-        flex: 1;
+    flex: 1;
 
-        font-size: 15px;
+    font-size: 13px;
 
-        letter-spacing: 0.8px;
+    letter-spacing: 0.5px;
 
-        white-space: nowrap;
-    }
+    white-space: nowrap;
+}
 
     .navbar .menu {
         display: none !important;
