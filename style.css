@@ -1403,6 +1403,28 @@ footer {
         font-size: 20px;
     }
 
+    /* ---------- BENEFICIOS ---------- */
+
+.beneficios {
+    padding: 80px 5%;
+}
+
+.beneficios-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.beneficio-card {
+    padding: 28px 24px;
+}
+
+.beneficio-card h3 {
+    font-size: 21px;
+}
+
+.beneficio-card p {
+    font-size: 14px;
+}
 
     /* ---------- SOBRE MÍ ---------- */
 
