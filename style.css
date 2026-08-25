@@ -789,6 +789,16 @@ button {
     padding: 110px 7%;
 }
 
+.trayectoria-etiqueta {
+    display: block;
+    margin-bottom: 10px;
+    color: #D9A441;
+    font-family: "Montserrat", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
 .trayectoria-grid {
     display: grid;
 
@@ -1135,6 +1145,13 @@ button {
     margin-bottom: 25px;
 }
 
+.contacto-confianza {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    color: #E1E7EF;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+}
 
 /* =========================================================
    12. BOTÓN WHATSAPP
@@ -1743,6 +1760,10 @@ footer {
 
     .contacto {
         padding: 90px 5%;
+    }
+
+    .contacto-confianza {
+        font-size: 12px;
     }
 
     .contacto-contenido {
