@@ -72,13 +72,9 @@ button {
 
 .logo {
     font-family: "Montserrat", sans-serif;
-
-    font-size: 21px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
     white-space: nowrap;
 }
 
@@ -198,10 +194,11 @@ button {
 }
 
 .hero h1 {
+    font-family: "Montserrat", sans-serif;
     font-size: clamp(45px, 5.5vw, 72px);
-
-    line-height: 1.05;
-
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -1.5px;
     margin-bottom: 25px;
 }
 
@@ -238,6 +235,14 @@ button {
     gap: 15px;
 
     margin-bottom: 35px;
+}
+
+.boton-principal,
+.boton-secundario,
+.boton-nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.4px;
 }
 
 .boton-principal {
