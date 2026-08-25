@@ -522,6 +522,13 @@ button {
     line-height: 1.6;
 }
 
+.modalidad {
+    color: #D9A441;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
 .clase-link {
     display: inline-flex;
 
@@ -1338,6 +1345,10 @@ footer {
 
         margin-bottom: 14px;
     }
+
+    .modalidad {
+    font-size: 12px;
+}
 
     .clase-contenido > p:not(.nivel) {
         font-size: 15px;
