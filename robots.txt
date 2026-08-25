@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juanrojas23-tech.github.io/juan-rojas-music/sitemap.xml
