@@ -588,6 +588,60 @@ button {
     transform: translateX(5px);
 }
 
+/* =========================================================
+   BENEFICIOS
+========================================================= */
+
+.beneficios {
+    padding: 110px 8%;
+    background: #0B1F3A;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0 20px;
+}
+
+.beneficio-card {
+    position: relative;
+    padding: 35px 30px;
+    background: #101C2E;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(217,164,65,0.45);
+}
+
+.beneficio-numero {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #D9A441;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.beneficio-card h3 {
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.beneficio-card p {
+    color: #AEB8C5;
+    font-size: 14px;
+    line-height: 1.7;
+}
 
 /* =========================================================
    7. SOBRE MÍ
@@ -1406,12 +1460,13 @@ footer {
     /* ---------- BENEFICIOS ---------- */
 
 .beneficios {
-    padding: 80px 5%;
+    padding: 80px 7%;
 }
 
 .beneficios-grid {
     grid-template-columns: 1fr;
     gap: 15px;
+    padding: 0 8px;
 }
 
 .beneficio-card {
