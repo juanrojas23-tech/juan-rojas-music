@@ -540,7 +540,7 @@ button {
 
     background-color: #101C2E;
 
-    padding: 110px 7%;
+    padding: 110px 8%;
 }
 
 .sobre-mi .titulo-seccion {
@@ -552,9 +552,11 @@ button {
 
     grid-template-columns: 0.9fr 1.1fr;
 
-    gap: 70px;
+    gap: 85px;
 
     align-items: center;
+
+    padding: 0 25px;
 }
 
 .sobre-mi-foto {
@@ -628,6 +630,7 @@ button {
 
 .sobre-mi-contenido {
     max-width: 650px;
+    padding-right: 35px;
 }
 
 .sobre-mi-subtitulo {
@@ -1327,10 +1330,12 @@ footer {
     }
 
     .sobre-mi-grid {
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
 
-        gap: 35px;
-    }
+    gap: 35px;
+
+    padding: 0 8px;
+}
 
     .sobre-mi-foto {
         width: 100%;
@@ -1365,12 +1370,12 @@ footer {
     }
 
     .sobre-mi-contenido {
-        width: 100%;
+    width: 100%;
 
-        max-width: 100%;
+    max-width: 100%;
 
-        padding: 0;
-    }
+    padding: 0 10px;
+}
 
     .sobre-mi-subtitulo {
         font-size: 11px !important;
