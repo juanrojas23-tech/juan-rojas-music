@@ -1215,6 +1215,21 @@ footer {
         flex-shrink: 0;
     }
 
+    .boton-instagram {
+
+    width: 100%;
+
+    min-height: 52px;
+
+}
+
+.contacto-frase {
+    font-size: 16px;
+}
+
+.contacto-descripcion {
+    font-size: 14px;
+}
 
     /* ---------- PORTADA ---------- */
 
@@ -1704,3 +1719,70 @@ footer {
         display: none !important;
     }
 }
+
+.boton-instagram {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+    padding: 14px 25px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    border-radius: 6px;
+
+    color: #FFFFFF;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.boton-instagram i {
+
+    font-size: 18px;
+
+}
+
+
+.boton-instagram:hover {
+
+    transform: translateY(-3px);
+
+    border-color: #D9A441;
+
+    color: #D9A441;
+
+}
+
+.contacto-frase {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.contacto-descripcion {
+    color: #D8E0EA;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
