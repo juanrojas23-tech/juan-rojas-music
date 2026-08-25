@@ -283,6 +283,13 @@ button {
     background-color: rgba(217,164,65,0.08);
 }
 
+.hero-confianza {
+    margin-top: 10px;
+    color: #AEB8C5;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
 .instrumentos {
     display: flex;
 
@@ -1248,6 +1255,10 @@ footer {
 
         line-height: 1.65;
     }
+
+    .hero-confianza {
+    font-size: 12px;
+}
 
     .hero-botones {
         flex-direction: column;
