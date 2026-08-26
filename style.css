@@ -2466,18 +2466,32 @@ footer {
     /* Ventana */
 
 .chat-faq-ventana {
-    right: 0;
-    bottom: 60px;
+    position: fixed;
+
+    right: 15px;
+    bottom: 70px;
 
     width: calc(100vw - 30px);
 
     height: 68vh;
     max-height: 520px;
-    min-height: 400px;
+    min-height: 350px;
+
+    display: none;
 
     border-radius: 18px;
+
+    z-index: 10000;
+
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+
+    overflow: hidden;
 }
 
+.chat-faq-ventana.abierto {
+    display: flex;
+}
     /* Encabezado */
 
     .chat-faq-header {
