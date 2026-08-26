@@ -427,17 +427,14 @@ async function responderPregunta(item) {
 
     volver.addEventListener("click", () => {
 
-        // Eliminamos mensajes anteriores
-        const mensajes =
-            chatFaqContenido.querySelectorAll(
-                ".chat-usuario, .chat-asistente, .chat-escribiendo, .chat-whatsapp"
-            );
-
-        mensajes.forEach(mensaje =>
-            mensaje.remove()
-        );
-
         volver.remove();
+
+        chatPreguntas.innerHTML = "";
+
+        mostrarPreguntasFAQ();
+
+        chatFaqContenido.scrollTop =
+            chatFaqContenido.scrollHeight;
 
         // Mostrar preguntas nuevamente
         mostrarPreguntasFAQ();
