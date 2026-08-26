@@ -1031,80 +1031,6 @@
 
 </section>
 
-<section id="faq" class="faq">
-
-    <div class="titulo-seccion">
-        <p>PREGUNTAS FRECUENTES</p>
-        <h2>Resuelve tus dudas</h2>
-    </div>
-
-    <div class="faq-lista">
-
-        <div class="faq-item">
-            <h3>¿Quienes pueden tomar las clases?</h3>
-            <p>
-                Las clases pueden tomarla niños mayores de seis años,
-                jovenes y adultos.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Las clases son presenciales o virtuales?</h3>
-            <p>
-                Puedes elegir entre clases presenciales en Cúcuta y
-                área metropolitana o modalidad virtual si estás fuera de Cúcuta.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Qué niveles manejas?</h3>
-            <p>
-                Se ofrecen procesos para nivel iniciación e intermedio
-                en violín, viola, piano, guitarra y técnica vocal.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Necesito tener mi propio instrumento?</h3>
-            <p>
-                Sí. lo esencial es que el estudiante posea su instrumento propio
-                con el fin de que su progreso sea mas notorio.
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Cuanto dura cada clase?</h3>
-            <p>
-                Dependiendo de lo que solicite el estudiante
-                pero las clases tiene la duracion aproximada de una hora
-                (50 min de clase y 10 min de descanso).
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Donde son las clases?</h3>
-            <p>
-                Las clases en general son personalizadas y
-                a domicilio el profesor se dirije hasta donde 
-                se encuentre el estudiante aunque también
-                hay posibilidad de usar una oficinna cuando
-                el estudiante no pueda en casa
-                (solo para violín, viola, guitarra y tecnica vocal).
-            </p>
-        </div>
-
-        <div class="faq-item">
-            <h3>¿Como son los pagos de las clases?</h3>
-            <p>
-                Los pagos de las clases se pueden hacer por cada clase
-                o por mes (se paga mes adelantado).
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
         <!-- =========================
              CONTACTO
         ========================== -->
@@ -1176,6 +1102,54 @@
 
 
     <script src="script.js"></script>
+
+    <!-- =========================================================
+     CHAT DE PREGUNTAS FRECUENTES
+========================================================= -->
+
+<div class="chat-faq">
+
+    <button class="chat-faq-boton" id="chatFaqBoton" aria-label="Abrir asistente">
+        <span class="chat-icono">💬</span>
+        <span class="chat-texto">¿Tienes dudas?</span>
+    </button>
+
+    <div class="chat-faq-ventana" id="chatFaqVentana">
+
+        <div class="chat-faq-header">
+            <div>
+                <strong>Asistente de Juan</strong>
+                <span>Preguntas frecuentes</span>
+            </div>
+
+            <button
+                class="chat-faq-cerrar"
+                id="chatFaqCerrar"
+                aria-label="Cerrar asistente"
+            >
+                ×
+            </button>
+        </div>
+
+        <div class="chat-faq-contenido" id="chatFaqContenido">
+
+            <div class="chat-mensaje chat-asistente">
+                <p>
+                    ¡Hola! 👋 Soy el asistente de Juan Fernando.
+                </p>
+                <p>
+                    Estoy aquí para ayudarte a resolver algunas
+                    preguntas sobre las clases. ¿Qué te gustaría saber?
+                </p>
+            </div>
+
+            <div class="chat-preguntas" id="chatPreguntas"></div>
+
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 

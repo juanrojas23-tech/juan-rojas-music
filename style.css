@@ -1537,28 +1537,6 @@ footer {
     font-size: 14px;
 }
 
-/* ---------- FAQ ---------- */
-
-.faq {
-    padding: 80px 7%;
-}
-
-.faq-lista {
-    gap: 12px;
-}
-
-.faq-item {
-    padding: 22px 20px;
-}
-
-.faq-item h3 {
-    font-size: 16px;
-}
-
-.faq-item p {
-    font-size: 14px;
-    line-height: 1.65;
-}
 
     /* ---------- SOBRE MÍ ---------- */
 
@@ -1999,5 +1977,208 @@ footer {
     color: #D8E0EA;
     font-size: 15px;
     line-height: 1.7;
+}
+
+/* =========================================================
+   CHAT FAQ
+========================================================= */
+
+.chat-faq {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+    font-family: "Montserrat", sans-serif;
+}
+
+.chat-faq-boton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border: 1px solid rgba(217,164,65,0.45);
+    border-radius: 30px;
+    background: #101C2E;
+    color: #FFFFFF;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.chat-faq-boton:hover {
+    transform: translateY(-3px);
+    border-color: #D9A441;
+}
+
+.chat-icono {
+    font-size: 18px;
+}
+
+.chat-texto {
+    white-space: nowrap;
+}
+
+.chat-faq-ventana {
+    position: absolute;
+    right: 0;
+    bottom: 65px;
+    width: 350px;
+    max-height: 560px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    background: #101C2E;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+}
+
+.chat-faq-ventana.abierto {
+    display: flex;
+}
+
+.chat-faq-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: #0B1F3A;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.chat-faq-header strong {
+    display: block;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.chat-faq-header span {
+    display: block;
+    color: #AEB8C5;
+    font-size: 11px;
+}
+
+.chat-faq-cerrar {
+    border: none;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 27px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.chat-faq-contenido {
+    padding: 18px;
+    overflow-y: auto;
+}
+
+.chat-mensaje {
+    max-width: 90%;
+    padding: 12px 14px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.chat-mensaje p {
+    margin: 0 0 7px;
+}
+
+.chat-mensaje p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-asistente {
+    background: rgba(255,255,255,0.055);
+    color: #E1E7EF;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-usuario {
+    margin-left: auto;
+    background: #D9A441;
+    color: #101C2E;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-preguntas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.chat-pregunta {
+    width: 100%;
+    padding: 10px 12px;
+    text-align: left;
+    border: 1px solid rgba(217,164,65,0.25);
+    border-radius: 10px;
+    background: transparent;
+    color: #E1E7EF;
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.chat-pregunta:hover {
+    background: rgba(217,164,65,0.08);
+    border-color: rgba(217,164,65,0.55);
+}
+
+.chat-escribiendo {
+    color: #AEB8C5;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.chat-whatsapp {
+    display: block;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #D9A441;
+    color: #101C2E;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ---------- CHAT EN MÓVIL ---------- */
+
+@media (max-width: 600px) {
+
+    .chat-faq {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .chat-faq-boton {
+        padding: 12px 15px;
+    }
+
+    .chat-texto {
+        font-size: 12px;
+    }
+
+    .chat-faq-ventana {
+        right: 0;
+        bottom: 60px;
+        width: calc(100vw - 30px);
+        max-height: 70vh;
+        border-radius: 16px;
+    }
+
+    .chat-faq-contenido {
+        padding: 15px;
+    }
+
 }
 
