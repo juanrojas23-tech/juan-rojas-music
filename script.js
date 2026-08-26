@@ -396,9 +396,9 @@ function escribirRespuesta(texto, velocidad = 18) {
             "chat-whatsapp";
 
         botonWhatsApp.href =
-            "https://wa.me/TUNUMERODEWHATSAPP";
-
-        botonWhatsApp.target = "_blank";
+    "https://wa.me/573018173228?text=Hola%2C%20estoy%20interesado%28a%29%20en%20las%20clases%20de%20m%C3%BAsica.%20Me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20horarios%20y%20precios.";
+        
+    botonWhatsApp.target = "_blank";
         botonWhatsApp.rel =
             "noopener noreferrer";
 
