@@ -2339,7 +2339,9 @@ footer {
 ========================================================= */
 
 .chat-escribiendo {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
 
     margin-bottom: 12px;
     padding: 8px 12px;
@@ -2355,22 +2357,41 @@ footer {
 
     font-size: 11px;
     font-style: italic;
-
-    animation: escribiendo 1s infinite alternate;
 }
 
-@keyframes escribiendo {
+.puntos-escribiendo {
+    display: inline-block;
 
-    from {
-        opacity: 0.45;
-    }
+    width: 18px;
 
-    to {
-        opacity: 1;
-    }
+    overflow: hidden;
 
+    animation:
+        puntosChat 1.2s steps(4, end) infinite;
 }
 
+@keyframes puntosChat {
+
+    0% {
+        width: 0;
+    }
+
+    25% {
+        width: 5px;
+    }
+
+    50% {
+        width: 10px;
+    }
+
+    75% {
+        width: 15px;
+    }
+
+    100% {
+        width: 18px;
+    }
+}
 /* =========================================================
    BOTÓN WHATSAPP
 ========================================================= */

@@ -113,11 +113,17 @@ const preguntasFAQ = [
     }
 ];
 
+
+// =========================================================
+// CREAR LAS PREGUNTAS
+// =========================================================
+
 function mostrarPreguntasFAQ() {
 
     chatPreguntas.innerHTML = "";
+    chatPreguntas.style.display = "flex";
 
-    preguntasFAQ.forEach((item) => {
+    preguntasFAQ.forEach((item, index) => {
 
         const boton = document.createElement("button");
 
@@ -125,21 +131,45 @@ function mostrarPreguntasFAQ() {
         boton.type = "button";
         boton.textContent = item.pregunta;
 
+        // Comienzan ocultas
+        boton.style.opacity = "0";
+        boton.style.transform = "translateY(8px)";
+        boton.style.pointerEvents = "none";
+
         boton.addEventListener("click", () => {
             responderPregunta(item);
         });
 
         chatPreguntas.appendChild(boton);
+
+        // Aparecen progresivamente
+        setTimeout(() => {
+
+            boton.style.transition =
+                "opacity 0.35s ease, transform 0.35s ease";
+
+            boton.style.opacity = "1";
+            boton.style.transform = "translateY(0)";
+            boton.style.pointerEvents = "auto";
+
+        }, 300 + (index * 120));
     });
 }
+
+
+// =========================================================
+// AGREGAR MENSAJE
+// =========================================================
 
 function agregarMensaje(texto, tipo) {
 
     const mensaje = document.createElement("div");
 
-    mensaje.className = `chat-mensaje ${tipo}`;
+    mensaje.className =
+        `chat-mensaje ${tipo}`;
 
-    mensaje.innerHTML = `<p>${texto}</p>`;
+    mensaje.innerHTML =
+        `<p>${texto}</p>`;
 
     chatFaqContenido.insertBefore(
         mensaje,
@@ -148,106 +178,232 @@ function agregarMensaje(texto, tipo) {
 
     chatFaqContenido.scrollTop =
         chatFaqContenido.scrollHeight;
+
+    return mensaje;
 }
 
-function responderPregunta(item) {
 
-    agregarMensaje(item.pregunta, "chat-usuario");
+// =========================================================
+// EFECTO "ESCRIBIENDO..."
+// =========================================================
 
-    chatPreguntas.style.display = "none";
+function mostrarEscribiendo() {
 
-    const escribiendo = document.createElement("div");
+    const escribiendo =
+        document.createElement("div");
 
-    escribiendo.className = "chat-escribiendo";
-    escribiendo.textContent = "El asistente está escribiendo...";
+    escribiendo.className =
+        "chat-escribiendo";
+
+    escribiendo.innerHTML =
+        'Escribiendo<span class="puntos-escribiendo">...</span>';
 
     chatFaqContenido.insertBefore(
         escribiendo,
         chatPreguntas
     );
 
-    setTimeout(() => {
+    chatFaqContenido.scrollTop =
+        chatFaqContenido.scrollHeight;
 
-        escribiendo.remove();
+    return escribiendo;
+}
 
-        agregarMensaje(
-            item.respuesta,
-            "chat-asistente"
-        );
 
-        if (
-            item.pregunta.includes("¿Cuánto cuestan") ||
-            item.pregunta.includes("¿Cómo puedo reservar")
-        ) {
+// =========================================================
+// ESCRIBIR RESPUESTA LETRA POR LETRA
+// =========================================================
 
-            const botonWhatsApp =
-                document.createElement("a");
+function escribirRespuesta(texto, velocidad = 18) {
 
-            botonWhatsApp.className =
-                "chat-whatsapp";
+    return new Promise((resolve) => {
 
-            botonWhatsApp.href =
-                "https://wa.me/TUNUMERODEWHATSAPP";
+        const mensaje =
+            document.createElement("div");
 
-            botonWhatsApp.target = "_blank";
-            botonWhatsApp.rel = "noopener noreferrer";
+        mensaje.className =
+            "chat-mensaje chat-asistente";
 
-            botonWhatsApp.textContent =
-                "💬 HABLAR POR WHATSAPP";
+        const parrafo =
+            document.createElement("p");
 
-            chatFaqContenido.insertBefore(
-                botonWhatsApp,
-                chatPreguntas
-            );
-        }
-
-        const volver =
-            document.createElement("button");
-
-        volver.className =
-            "chat-pregunta";
-
-        volver.type = "button";
-        volver.textContent =
-            "← Ver todas las preguntas";
-
-        volver.addEventListener("click", () => {
-
-            chatPreguntas.style.display =
-                "flex";
-
-            volver.remove();
-
-            chatFaqContenido.scrollTop =
-                chatFaqContenido.scrollHeight;
-        });
+        mensaje.appendChild(parrafo);
 
         chatFaqContenido.insertBefore(
-            volver,
+            mensaje,
             chatPreguntas
         );
 
-        chatFaqContenido.scrollTop =
-            chatFaqContenido.scrollHeight;
+        let indice = 0;
 
-    }, 900);
+        function escribir() {
+
+            if (indice < texto.length) {
+
+                parrafo.textContent +=
+                    texto.charAt(indice);
+
+                indice++;
+
+                chatFaqContenido.scrollTop =
+                    chatFaqContenido.scrollHeight;
+
+                setTimeout(escribir, velocidad);
+
+            } else {
+
+                resolve(mensaje);
+            }
+        }
+
+        escribir();
+    });
 }
+
+
+// =========================================================
+// RESPONDER PREGUNTA
+// =========================================================
+
+async function responderPregunta(item) {
+
+    // Ocultar preguntas
+    chatPreguntas.style.display = "none";
+
+    // Mostrar pregunta del usuario
+    agregarMensaje(
+        item.pregunta,
+        "chat-usuario"
+    );
+
+    // Pequeña pausa antes de responder
+    await new Promise(resolve =>
+        setTimeout(resolve, 350)
+    );
+
+    // Mostrar "Escribiendo..."
+    const escribiendo =
+        mostrarEscribiendo();
+
+    // Tiempo que permanece escribiendo
+    await new Promise(resolve =>
+        setTimeout(resolve, 1000)
+    );
+
+    escribiendo.remove();
+
+    // Escribir respuesta letra por letra
+    await escribirRespuesta(
+        item.respuesta,
+        15
+    );
+
+    // WhatsApp para precio y reserva
+    if (
+        item.pregunta.includes("¿Cuánto cuestan") ||
+        item.pregunta.includes("¿Cómo puedo reservar")
+    ) {
+
+        const botonWhatsApp =
+            document.createElement("a");
+
+        botonWhatsApp.className =
+            "chat-whatsapp";
+
+        botonWhatsApp.href =
+            "https://wa.me/TUNUMERODEWHATSAPP";
+
+        botonWhatsApp.target = "_blank";
+        botonWhatsApp.rel =
+            "noopener noreferrer";
+
+        botonWhatsApp.textContent =
+            "💬 HABLAR POR WHATSAPP";
+
+        chatFaqContenido.insertBefore(
+            botonWhatsApp,
+            chatPreguntas
+        );
+    }
+
+    // Botón volver
+    const volver =
+        document.createElement("button");
+
+    volver.className =
+        "chat-pregunta";
+
+    volver.type = "button";
+
+    volver.textContent =
+        "← Ver todas las preguntas";
+
+    volver.style.marginTop = "10px";
+
+    volver.addEventListener("click", () => {
+
+        // Eliminamos mensajes anteriores
+        const mensajes =
+            chatFaqContenido.querySelectorAll(
+                ".chat-usuario, .chat-asistente, .chat-escribiendo, .chat-whatsapp"
+            );
+
+        mensajes.forEach(mensaje =>
+            mensaje.remove()
+        );
+
+        volver.remove();
+
+        // Mostrar preguntas nuevamente
+        mostrarPreguntasFAQ();
+
+        chatFaqContenido.scrollTop = 0;
+    });
+
+    chatFaqContenido.insertBefore(
+        volver,
+        chatPreguntas
+    );
+
+    chatFaqContenido.scrollTop =
+        chatFaqContenido.scrollHeight;
+}
+
+
+// =========================================================
+// ABRIR CHAT
+// =========================================================
 
 chatFaqBoton.addEventListener("click", () => {
 
     chatFaqVentana.classList.add("abierto");
 
-    chatFaqBoton.style.display = "none";
+    chatFaqBoton.style.display =
+        "none";
 
-    chatFaqContenido.scrollTop =
-        chatFaqContenido.scrollHeight;
+    chatFaqContenido.scrollTop = 0;
+
+    mostrarPreguntasFAQ();
 });
+
+
+// =========================================================
+// CERRAR CHAT
+// =========================================================
 
 chatFaqCerrar.addEventListener("click", () => {
 
-    chatFaqVentana.classList.remove("abierto");
+    chatFaqVentana.classList.remove(
+        "abierto"
+    );
 
-    chatFaqBoton.style.display = "flex";
+    chatFaqBoton.style.display =
+        "flex";
 });
+
+
+// =========================================================
+// INICIO
+// =========================================================
 
 mostrarPreguntasFAQ();
