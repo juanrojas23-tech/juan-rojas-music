@@ -644,6 +644,45 @@ button {
 }
 
 /* =========================================================
+   PREGUNTAS FRECUENTES
+========================================================= */
+
+.faq {
+    padding: 110px 8%;
+    background: #101C2E;
+}
+
+.faq-lista {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-item {
+    padding: 25px 28px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+}
+
+.faq-item h3 {
+    color: #FFFFFF;
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #AEB8C5;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================================================
    7. SOBRE MÍ
 ========================================================= */
 
@@ -1496,6 +1535,29 @@ footer {
 
 .beneficio-card p {
     font-size: 14px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq {
+    padding: 80px 7%;
+}
+
+.faq-lista {
+    gap: 12px;
+}
+
+.faq-item {
+    padding: 22px 20px;
+}
+
+.faq-item h3 {
+    font-size: 16px;
+}
+
+.faq-item p {
+    font-size: 14px;
+    line-height: 1.65;
 }
 
     /* ---------- SOBRE MÍ ---------- */
