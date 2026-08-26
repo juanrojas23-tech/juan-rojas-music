@@ -183,12 +183,14 @@ async function mostrarBienvenida() {
 
 function mostrarPreguntasFAQ() {
 
-    chatPreguntas.innerHTML = "";
+    // Limpiar únicamente el listado de preguntas
+    chatPreguntas.replaceChildren();
+
     chatPreguntas.style.display = "flex";
 
     preguntasFAQ.forEach((item, index) => {
 
-        // Si ya fue respondida, no la mostramos
+        // No mostrar preguntas que ya fueron respondidas
         if (item.respondida) {
             return;
         }
@@ -199,7 +201,6 @@ function mostrarPreguntasFAQ() {
         boton.type = "button";
         boton.textContent = item.pregunta;
 
-        // Comienzan ocultas
         boton.style.opacity = "0";
         boton.style.transform = "translateY(8px)";
         boton.style.pointerEvents = "none";
@@ -210,7 +211,6 @@ function mostrarPreguntasFAQ() {
 
         chatPreguntas.appendChild(boton);
 
-        // Aparición progresiva
         setTimeout(() => {
 
             boton.style.transition =
@@ -413,43 +413,32 @@ async function responderPregunta(item) {
 
     // Botón volver
     const volver =
-        document.createElement("button");
+    document.createElement("button");
 
-    volver.className =
-        "chat-pregunta";
+volver.className =
+    "chat-pregunta";
 
-    volver.type = "button";
+volver.type = "button";
 
-    volver.textContent =
-        "← Ver todas las preguntas";
+volver.textContent =
+    "← Ver todas las preguntas";
 
-    volver.style.marginTop = "10px";
+volver.style.marginTop = "10px";
 
-    volver.addEventListener("click", () => {
+volver.addEventListener("click", () => {
 
-        volver.remove();
+    volver.remove();
 
-        chatPreguntas.innerHTML = "";
-
-        mostrarPreguntasFAQ();
-
-        chatFaqContenido.scrollTop =
-            chatFaqContenido.scrollHeight;
-
-        // Mostrar preguntas nuevamente
-        mostrarPreguntasFAQ();
-
-        chatFaqContenido.scrollTop = 0;
-    });
-
-    chatFaqContenido.insertBefore(
-        volver,
-        chatPreguntas
-    );
+    mostrarPreguntasFAQ();
 
     chatFaqContenido.scrollTop =
         chatFaqContenido.scrollHeight;
-}
+});
+
+chatFaqContenido.insertBefore(
+    volver,
+    chatPreguntas
+);
 
 
 // =========================================================
