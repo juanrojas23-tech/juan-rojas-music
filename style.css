@@ -2443,15 +2443,32 @@ footer {
     /* Ventana */
 
     .chat-faq-ventana {
-        right: 0;
-        bottom: 60px;
+    position: absolute;
 
-        width: calc(100vw - 30px);
+    right: 0;
+    bottom: 70px;
 
-        max-height: 72vh;
+    width: 360px;
 
-        border-radius: 18px;
-    }
+    height: min(590px, calc(100vh - 110px));
+    max-height: calc(100vh - 110px);
+
+    display: none;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #0B1F3A;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.50);
+
+    animation: chatEntrada 0.25s ease;
+}
 
     /* Encabezado */
 
@@ -2511,12 +2528,16 @@ footer {
     }
 
     .chat-faq-ventana {
-        right: 0;
-        bottom: 60px;
-        width: calc(100vw - 30px);
-        max-height: 70vh;
-        border-radius: 16px;
-    }
+    right: 0;
+    bottom: 60px;
+
+    width: calc(100vw - 30px);
+
+    height: min(72vh, 560px);
+    max-height: calc(100vh - 90px);
+
+    border-radius: 18px;
+}
 
     .chat-faq-contenido {
         padding: 15px;
