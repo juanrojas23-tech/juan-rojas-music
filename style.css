@@ -1980,7 +1980,7 @@ footer {
 }
 
 /* =========================================================
-   CHAT FAQ
+   CHAT FAQ — DISEÑO
 ========================================================= */
 
 .chat-faq {
@@ -1991,98 +1991,250 @@ footer {
     font-family: "Montserrat", sans-serif;
 }
 
+/* =========================================================
+   BOTÓN FLOTANTE
+========================================================= */
+
 .chat-faq-boton {
     display: flex;
     align-items: center;
     gap: 10px;
+
     padding: 13px 18px;
-    border: 1px solid rgba(217,164,65,0.45);
+
+    border: 1px solid rgba(217, 164, 65, 0.55);
     border-radius: 30px;
-    background: #101C2E;
+
+    background: #0B1F3A;
     color: #FFFFFF;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+
     cursor: pointer;
+
     font-family: inherit;
     font-size: 13px;
     font-weight: 600;
-    transition: transform 0.25s ease, border-color 0.25s ease;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .chat-faq-boton:hover {
     transform: translateY(-3px);
+
     border-color: #D9A441;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.45);
 }
 
 .chat-icono {
-    font-size: 18px;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 17px;
 }
 
 .chat-texto {
     white-space: nowrap;
 }
 
+/* =========================================================
+   VENTANA PRINCIPAL
+========================================================= */
+
 .chat-faq-ventana {
     position: absolute;
+
     right: 0;
-    bottom: 65px;
-    width: 350px;
-    max-height: 560px;
+    bottom: 70px;
+
+    width: 360px;
+    max-height: 590px;
+
     display: none;
     flex-direction: column;
+
     overflow: hidden;
-    background: #101C2E;
-    border: 1px solid rgba(255,255,255,0.10);
-    border-radius: 18px;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.45);
+
+    background: #0B1F3A;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.50);
+
+    animation: chatEntrada 0.25s ease;
 }
 
 .chat-faq-ventana.abierto {
     display: flex;
 }
 
+@keyframes chatEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
 .chat-faq-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 20px;
-    background: #0B1F3A;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    padding: 17px 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0B1F3A,
+            #101C2E
+        );
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-faq-header > div {
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-faq-header strong {
     display: block;
+
     color: #FFFFFF;
+
     font-size: 15px;
+    font-weight: 700;
+
     margin-bottom: 4px;
 }
 
 .chat-faq-header span {
     display: block;
+
     color: #AEB8C5;
-    font-size: 11px;
+
+    font-size: 10px;
+    letter-spacing: 0.3px;
 }
 
+/* Botón cerrar */
+
 .chat-faq-cerrar {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     border: none;
-    background: transparent;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
     color: #FFFFFF;
-    font-size: 27px;
+
+    font-size: 23px;
+    font-weight: 300;
+
     line-height: 1;
+
     cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
+
+.chat-faq-cerrar:hover {
+    background: rgba(217, 164, 65, 0.15);
+    color: #D9A441;
+}
+
+/* =========================================================
+   CONTENIDO DEL CHAT
+========================================================= */
 
 .chat-faq-contenido {
     padding: 18px;
+
     overflow-y: auto;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgba(217, 164, 65, 0.45) transparent;
 }
 
+/* Scrollbar Chrome */
+
+.chat-faq-contenido::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-faq-contenido::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-faq-contenido::-webkit-scrollbar-thumb {
+    background: rgba(217, 164, 65, 0.45);
+    border-radius: 10px;
+}
+
+/* =========================================================
+   MENSAJES
+========================================================= */
+
 .chat-mensaje {
-    max-width: 90%;
+    max-width: 88%;
+
     padding: 12px 14px;
-    margin-bottom: 14px;
-    border-radius: 14px;
-    font-size: 13px;
-    line-height: 1.6;
+
+    margin-bottom: 13px;
+
+    border-radius: 15px;
+
+    font-size: 12.5px;
+    line-height: 1.65;
+
+    animation: mensajeEntrada 0.25s ease;
+}
+
+@keyframes mensajeEntrada {
+
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
 }
 
 .chat-mensaje p {
@@ -2093,62 +2245,252 @@ footer {
     margin-bottom: 0;
 }
 
+/* Mensaje del asistente */
+
 .chat-asistente {
-    background: rgba(255,255,255,0.055);
-    color: #E1E7EF;
-    border-bottom-left-radius: 4px;
+    background: #101C2E;
+
+    color: #DCE3EC;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    border-bottom-left-radius: 5px;
 }
+
+/* Mensaje del usuario */
 
 .chat-usuario {
     margin-left: auto;
+
     background: #D9A441;
+
     color: #101C2E;
-    border-bottom-right-radius: 4px;
+
+    border-bottom-right-radius: 5px;
+
+    font-weight: 500;
 }
+
+/* =========================================================
+   PREGUNTAS
+========================================================= */
 
 .chat-preguntas {
     display: flex;
     flex-direction: column;
+
     gap: 8px;
+
+    margin-top: 8px;
 }
 
 .chat-pregunta {
     width: 100%;
-    padding: 10px 12px;
+
+    padding: 11px 13px;
+
+    display: block;
+
     text-align: left;
-    border: 1px solid rgba(217,164,65,0.25);
-    border-radius: 10px;
-    background: transparent;
-    color: #E1E7EF;
+
+    border:
+        1px solid rgba(217, 164, 65, 0.25);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    color: #E5EAF0;
+
     font-family: inherit;
-    font-size: 12px;
+
+    font-size: 11.5px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        color 0.2s ease;
 }
 
 .chat-pregunta:hover {
-    background: rgba(217,164,65,0.08);
-    border-color: rgba(217,164,65,0.55);
+    background:
+        rgba(217, 164, 65, 0.08);
+
+    border-color:
+        rgba(217, 164, 65, 0.60);
+
+    color: #FFFFFF;
+
+    transform: translateX(2px);
 }
 
+/* =========================================================
+   "ESCRIBIENDO..."
+========================================================= */
+
 .chat-escribiendo {
-    color: #AEB8C5;
-    font-size: 12px;
-    font-style: italic;
+    display: inline-block;
+
     margin-bottom: 12px;
+    padding: 8px 12px;
+
+    border-radius: 12px;
+
+    background: #101C2E;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+    color: #AEB8C5;
+
+    font-size: 11px;
+    font-style: italic;
+
+    animation: escribiendo 1s infinite alternate;
 }
+
+@keyframes escribiendo {
+
+    from {
+        opacity: 0.45;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+/* =========================================================
+   BOTÓN WHATSAPP
+========================================================= */
 
 .chat-whatsapp {
     display: block;
+
     margin-top: 10px;
-    padding: 12px;
-    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    border-radius: 11px;
+
     background: #D9A441;
-    color: #101C2E;
+
+    color: #0B1F3A;
+
     text-align: center;
     text-decoration: none;
-    font-size: 12px;
-    font-weight: 700;
+
+    font-family: inherit;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.chat-whatsapp:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(217, 164, 65, 0.25);
+}
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .chat-faq {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    /* Botón flotante */
+
+    .chat-faq-boton {
+        padding: 11px 14px;
+
+        gap: 8px;
+
+        border-radius: 28px;
+    }
+
+    .chat-icono {
+        width: 23px;
+        height: 23px;
+
+        font-size: 16px;
+    }
+
+    .chat-texto {
+        font-size: 11px;
+    }
+
+    /* Ventana */
+
+    .chat-faq-ventana {
+        right: 0;
+        bottom: 60px;
+
+        width: calc(100vw - 30px);
+
+        max-height: 72vh;
+
+        border-radius: 18px;
+    }
+
+    /* Encabezado */
+
+    .chat-faq-header {
+        padding: 15px 16px;
+    }
+
+    .chat-faq-header strong {
+        font-size: 14px;
+    }
+
+    .chat-faq-header span {
+        font-size: 9.5px;
+    }
+
+    /* Contenido */
+
+    .chat-faq-contenido {
+        padding: 15px;
+    }
+
+    /* Mensajes */
+
+    .chat-mensaje {
+        max-width: 91%;
+
+        padding: 11px 12px;
+
+        font-size: 12px;
+    }
+
+    /* Preguntas */
+
+    .chat-pregunta {
+        padding: 11px 12px;
+
+        font-size: 11px;
+    }
+
 }
 
 /* ---------- CHAT EN MÓVIL ---------- */
