@@ -188,6 +188,11 @@ function mostrarPreguntasFAQ() {
 
     preguntasFAQ.forEach((item, index) => {
 
+        // Si ya fue respondida, no la mostramos
+        if (item.respondida) {
+            return;
+        }
+
         const boton = document.createElement("button");
 
         boton.className = "chat-pregunta";
@@ -205,7 +210,7 @@ function mostrarPreguntasFAQ() {
 
         chatPreguntas.appendChild(boton);
 
-        // Aparecen progresivamente
+        // Aparición progresiva
         setTimeout(() => {
 
             boton.style.transition =
@@ -217,6 +222,21 @@ function mostrarPreguntasFAQ() {
 
         }, 300 + (index * 120));
     });
+
+    // Si ya no quedan preguntas
+    if (chatPreguntas.children.length === 0) {
+
+        const final =
+            document.createElement("div");
+
+        final.className =
+            "chat-mensaje chat-asistente";
+
+        final.innerHTML =
+            "<p>Hemos revisado todas las preguntas disponibles. 😊</p>";
+
+        chatPreguntas.appendChild(final);
+    }
 }
 
 
@@ -329,6 +349,8 @@ function escribirRespuesta(texto, velocidad = 18) {
 // =========================================================
 
 async function responderPregunta(item) {
+
+    item.respondida = true;
 
     // Ocultar preguntas
     chatPreguntas.style.display = "none";
