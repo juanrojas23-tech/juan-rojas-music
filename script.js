@@ -59,6 +59,7 @@ const chatFaqVentana = document.getElementById("chatFaqVentana");
 const chatFaqCerrar = document.getElementById("chatFaqCerrar");
 const chatFaqContenido = document.getElementById("chatFaqContenido");
 const chatPreguntas = document.getElementById("chatPreguntas");
+const chatBienvenida = document.getElementById("chatBienvenida");
 
 const preguntasFAQ = [
     {
@@ -117,6 +118,68 @@ const preguntasFAQ = [
 // =========================================================
 // CREAR LAS PREGUNTAS
 // =========================================================
+
+async function mostrarBienvenida() {
+
+    chatBienvenida.innerHTML = "";
+
+    const mensaje =
+        document.createElement("div");
+
+    mensaje.className =
+        "chat-mensaje chat-asistente";
+
+    const parrafo =
+        document.createElement("p");
+
+    mensaje.appendChild(parrafo);
+
+    chatBienvenida.appendChild(mensaje);
+
+    const texto =
+        "¡Hola! 👋 Soy el asistente de Juan Fernando.";
+
+    const texto2 =
+        "Estoy aquí para ayudarte a resolver algunas preguntas sobre las clases. ¿Qué te gustaría saber?";
+
+    // Primera frase
+    for (let i = 0; i < texto.length; i++) {
+
+        parrafo.textContent +=
+            texto.charAt(i);
+
+        chatFaqContenido.scrollTop =
+            chatFaqContenido.scrollHeight;
+
+        await new Promise(resolve =>
+            setTimeout(resolve, 22)
+        );
+    }
+
+    // Separación entre frases
+    await new Promise(resolve =>
+        setTimeout(resolve, 350)
+    );
+
+    const segundoParrafo =
+        document.createElement("p");
+
+    mensaje.appendChild(segundoParrafo);
+
+    // Segunda frase
+    for (let i = 0; i < texto2.length; i++) {
+
+        segundoParrafo.textContent +=
+            texto2.charAt(i);
+
+        chatFaqContenido.scrollTop =
+            chatFaqContenido.scrollHeight;
+
+        await new Promise(resolve =>
+            setTimeout(resolve, 18)
+        );
+    }
+}
 
 function mostrarPreguntasFAQ() {
 
@@ -374,7 +437,7 @@ async function responderPregunta(item) {
 // ABRIR CHAT
 // =========================================================
 
-chatFaqBoton.addEventListener("click", () => {
+chatFaqBoton.addEventListener("click", async () => {
 
     chatFaqVentana.classList.add("abierto");
 
@@ -382,6 +445,14 @@ chatFaqBoton.addEventListener("click", () => {
         "none";
 
     chatFaqContenido.scrollTop = 0;
+
+    chatPreguntas.style.display = "none";
+
+    await mostrarBienvenida();
+
+    await new Promise(resolve =>
+        setTimeout(resolve, 400)
+    );
 
     mostrarPreguntasFAQ();
 });
