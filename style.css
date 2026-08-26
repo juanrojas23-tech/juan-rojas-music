@@ -2058,7 +2058,9 @@ footer {
     bottom: 70px;
 
     width: 360px;
-    max-height: 590px;
+    height: 65vh;
+    max-height: 500px;
+    min-height: 420px;
 
     display: none;
     flex-direction: column;
@@ -2442,32 +2444,17 @@ footer {
 
     /* Ventana */
 
-    .chat-faq-ventana {
-    position: absolute;
-
+.chat-faq-ventana {
     right: 0;
-    bottom: 70px;
+    bottom: 60px;
 
-    width: 360px;
+    width: calc(100vw - 30px);
 
-    height: min(590px, calc(100vh - 110px));
-    max-height: calc(100vh - 110px);
+    height: 68vh;
+    max-height: 520px;
+    min-height: 400px;
 
-    display: none;
-    flex-direction: column;
-
-    overflow: hidden;
-
-    background: #0B1F3A;
-
-    border: 1px solid rgba(255, 255, 255, 0.10);
-
-    border-radius: 20px;
-
-    box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.50);
-
-    animation: chatEntrada 0.25s ease;
+    border-radius: 18px;
 }
 
     /* Encabezado */
