@@ -348,7 +348,7 @@ function escribirRespuesta(texto, velocidad = 18) {
 // RESPONDER PREGUNTA
 // =========================================================
 
-async function responderPregunta(item) {
+ async function responderPregunta(item){
 
     item.respondida = true;
 
@@ -440,6 +440,7 @@ chatFaqContenido.insertBefore(
     chatPreguntas
 );
 
+}
 
 // =========================================================
 // ABRIR CHAT
